@@ -27,6 +27,7 @@ This tool can :
 **Step 2 - Create and Activate a Virtual Environment {Preventing version conflicts or any python dependencies!!!}**
 >    **Create a virtual environment**
 >    python -m venv venv
+> 
 >    **Activating the virtual environment** 
 >    venv\Scripts\activate      **#{works for windows}**
 
@@ -61,6 +62,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 **Now we are good to go !!!!**
 **the setup is ready to use**  
+
 
 
 
