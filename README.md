@@ -19,7 +19,7 @@ This tool can :
 
 **How to get Started ?**\
 
->Quick SETUP -\
+>Quick SETUP -
 **Step 1 - Cloning the Repository {Setting up the tool!!!!}**\
 >    git clone https://github.com/rishideep04/queuectl.git\
 >    cd queuectl\
@@ -62,6 +62,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 **Now we are good to go !!!!**
 **the setup is ready to use**  
+
 
 
 
