@@ -1,4 +1,4 @@
->#QueueCTL - CLI based background job queue system
+># QueueCTL - CLI based background job queue system
 
 The tool is built in Python,designed to manage asynchronous jobs with:
 
@@ -62,5 +62,6 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 **Now we are good to go !!!!**
 **the setup is ready to use**  
+
 
 
