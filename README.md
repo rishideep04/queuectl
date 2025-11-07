@@ -42,7 +42,7 @@ This tool can :
 # **The Problem I Faced** - <br/>
 >When i have multiple jobs and multiple worker processes,my worker process on completing a task,it is trying for the next job ,but if the job is already assigned to a worker node, this is leading to a deadlock(1 job 2 worker nodes trying to access).so I solved the deadlock issue by preventing the shared state of worker process and locked the database so that only one worker process at a time can execute.This led to a Sequential Execution of the jobs by the worker nodes which is completely abiding the concept of asynchronous execution. <br/>
 >
->**Now coming back to the clarification,**
+# **Coming back to the clarification,**
 with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is executing a job,the other worker processes will skip that job and take the next job.this helped me control over multiple writes. <br/>
 
 
@@ -62,6 +62,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 **Now we are good to go !!!!** <br/>
 **the setup is ready to use**  <br/>
+
 
 
 
