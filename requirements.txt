@@ -1,0 +1,6 @@
+typer
+rich
+psycopg2
+flask
+pytest
+pytest-mock
