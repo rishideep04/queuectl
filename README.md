@@ -17,9 +17,9 @@ This tool can :
 4. retry the failed jobs on using dlq-retry(happens automatically on executing the command)
 5. handles the dead letter queue
 
-**How to get Started ?**
+**# How to get Started ?**
 
->Quick SETUP -<br/>
+**Quick SETUP** -<br/>
 **Step 1 - Cloning the Repository {Setting up the tool!!!!}** <br/>
 >    git clone https://github.com/rishideep04/queuectl.git <br/>
 >    cd queuectl <br/>
@@ -62,6 +62,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 **Now we are good to go !!!!** <br/>
 **the setup is ready to use**  <br/>
+
 
 
 
