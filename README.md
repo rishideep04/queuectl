@@ -33,7 +33,6 @@ cd queuectl
 ```bash
 python -m venv venv 
 ```
-     <br/>
 **Activating the virtual environment**<br/>
 ```bash
 venv\Scripts\activate  #works for windows
@@ -204,6 +203,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
