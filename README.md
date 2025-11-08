@@ -56,13 +56,17 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 # **Step 4 - Setting up Database** <br/>
 > 1. create a database (if required) <br/>
->    CREATE DATABASE queuectl; <br/>
+```bash
+CREATE DATABASE queuectl;
+```
 > 2. DB configuration - <br/>
->    DB_CONFIG = { <br/>
->    "dbname": "queuectl", <br/>
->    "user": "postgres", <br/>
->    "**password**": "**Rishi@282004**", <br/>
->    } <br/>
+```bash
+DB_CONFIG = { 
+"dbname": "queuectl", 
+"user": "postgres", 
+"**password**": "**Rishi@282004**",
+}
+```
 > 3. Initialize the Database <br/>
 >    python cli.py init #initializing the database for storing the jobs,workers and configuration features **{this step can be skipped if you want to use the existing database}** <br/>
 
@@ -201,6 +205,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
