@@ -16,7 +16,7 @@ This tool can :
 3. process the jobs with worker processes
 4. retry the failed jobs on using dlq-retry(happens automatically on executing the command)
 5. handles the dead letter queue
-
+**I have made specifically for command prompt commands**<br/>
 # How to get Started ?
 
 # **Quick SETUP** -<br/>
@@ -71,6 +71,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
  3. **Start Enqueue the Jobs** <br/>
     ![We initialize the Database](images/img4.jpg) <br/>
      
+
 
 
 
