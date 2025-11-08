@@ -30,17 +30,18 @@ cd queuectl
 
 # **Step 2 - Create and Activate a Virtual Environment {Preventing version conflicts or any python dependencies!!!}** <br/>
 **Create a virtual environment** <br/>
-     ```bash
-     python -m venv venv 
-     ```
+```bash
+python -m venv venv 
+```
+     <br/>
 **Activating the virtual environment**<br/>
-     ```bash
-     venv\Scripts\activate  #works for windows
-     ```
+```bash
+venv\Scripts\activate  #works for windows
+```
 # **Step 3 - Install Dependencies {I have attached a requirements.txt file in the project repo,just run the command}** <br/>
-     ```bash
-     pip install -r requirements.txt <br/>
-     ```
+```bash
+pip install -r requirements.txt 
+```
 
 **Before we continue,i have to clarify the reason for using PostgreSQL, which i felt a better choice for the UseCase.** <br/>
 
@@ -203,6 +204,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
