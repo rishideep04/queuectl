@@ -48,7 +48,7 @@ pip install -r requirements.txt
 >Yes, I chose PostgreSQL over the other existing db.Initially I worked with SQLITE3 but i ended up with the problem of multiple writes which lead to a deadlock situation and on solving it (used the file locking mechanism which SQLITE is famous for!!) i ended up with concurrency  bottlenecks. <br/>
 
 # **The Problem I Faced** <br/>
->When i have multiple jobs and multiple worker processes,my worker process on completing a task,it is trying for the next job ,but if the job is already assigned to a worker node, this is leading to a deadlock(1 job 2 worker nodes trying to access).so I solved the deadlock issue by preventing the shared state of worker process and locked the database so that only one worker process at a time can execute.This led to a Sequential Execution of the jobs by the worker nodes which is completely abiding the concept of asynchronous execution. <br/>
+>When i have multiple jobs and multiple worker processes,my worker process on completing a task,it is trying for the next job ,but if the job is already assigned to a worker node, this is leading to a deadlock(1 job 2 worker nodes trying to access).so I solved the deadlock issue by preventing the shared state of worker process and locked the database so that only one worker process at a time can execute.This led to a Sequential Execution of the jobs by the worker nodes which is completely a contradiction for the concept of asynchronous execution. <br/>
 >
 # **Coming back to the clarification**
 with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is executing a job,the other worker processes will skip that job and take the next job.this helped me control over multiple writes. <br/>
@@ -62,8 +62,6 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 >    "dbname": "queuectl", <br/>
 >    "user": "postgres", <br/>
 >    "**password**": "**Rishi@282004**", <br/>
->    "host": "localhost", <br/>
->    "port": 5432 <br/>
 >    } <br/>
 > 3. Initialize the Database <br/>
 >    python cli.py init #initializing the database for storing the jobs,workers and configuration features **{this step can be skipped if you want to use the existing database}** <br/>
@@ -203,6 +201,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
