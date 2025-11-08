@@ -78,6 +78,12 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
     ![Starting the workers](images/workers_start.jpg) <br/>
 >   **Jobs List after Execution by the worker processes** <br/>
     ![jobs after execution](images/jobs_afterexecution.jpg) <br/>
+ 6. **Now that there is a Dead process in the Job table, it is stored in the Dead Letter Queue(DLQ)** <br/>
+    ![dead jobs storing in DLQ](images/dlq_list.jpg) <br/>
+ 7. **retrying the dead process from the DLQ** <br/>
+    ![dead jobs storing in DLQ](images/dlq_retry.jpg) <br/>
+ 6. **Stopping the Workers** <br/>
+
 
 
 
