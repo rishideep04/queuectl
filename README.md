@@ -112,6 +112,32 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 > **safe insert helps when there is an error occured while inserting in database or transaction,it repeats it**
 
+### **High-Level Data Flow**
+┌─────────────────────────────┐
+│ CLI (enqueue) │
+└────────────┬────────────────┘
+│
+▼
+┌──────────────┐
+│ PostgreSQL │
+│ (jobs table)│
+└──────┬───────┘
+│
+▼
+┌────────────────────┐
+│ Worker (poll loop) │
+└───────┬────────────┘
+│
+▼
+Execute → Update State → Retry/Backoff
+│
+▼
+Completed / Dead (DLQ)
+│
+▼
+CLI list / Web Dashboard
+
+
 
 
 
