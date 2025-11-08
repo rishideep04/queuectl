@@ -23,8 +23,10 @@ This tool can :
 
 # **Quick SETUP** -<br/>
 # **Step 1 - Cloning the Repository {Setting up the tool!!!!}** <br/>
+```bash
 >    git clone https://github.com/rishideep04/queuectl.git <br/>
 >    cd queuectl <br/>
+```
 
 # **Step 2 - Create and Activate a Virtual Environment {Preventing version conflicts or any python dependencies!!!}** <br/>
 >    **Create a virtual environment** <br/>
@@ -197,6 +199,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
