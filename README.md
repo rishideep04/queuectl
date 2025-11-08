@@ -24,19 +24,24 @@ This tool can :
 # **Quick SETUP** -<br/>
 # **Step 1 - Cloning the Repository {Setting up the tool!!!!}** <br/>
 ```bash
->    git clone https://github.com/rishideep04/queuectl.git <br/>
->    cd queuectl <br/>
+git clone https://github.com/rishideep04/queuectl.git 
+cd queuectl 
 ```
 
 # **Step 2 - Create and Activate a Virtual Environment {Preventing version conflicts or any python dependencies!!!}** <br/>
 >    **Create a virtual environment** <br/>
->    python -m venv venv <br/>
+     ```bash
+     python -m venv venv <br/>
+     ```
 > 
 >    **Activating the virtual environment**<br/>
->    venv\Scripts\activate      **#{works for windows}** <br/>
-
+     ```bash
+     venv\Scripts\activate  #works for windows
+     ```
 # **Step 3 - Install Dependencies {I have attached a requirements.txt file in the project repo,just run the command}** <br/>
->    pip install -r requirements.txt <br/>
+     ```bash
+     pip install -r requirements.txt <br/>
+     ```
 
 **Before we continue,i have to clarify the reason for using PostgreSQL, which i felt a better choice for the UseCase.** <br/>
 
@@ -199,6 +204,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
