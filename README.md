@@ -66,13 +66,19 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 **the setup is ready to use**  <br/>
 
 # Usage Examples — CLI Commands with Example Outputs
- 1. **help for finding out the available commands** <br/>
-    ![help option to view all the available commands in the tool](images/img1.jpg)
+ 1. **Help for finding out the available commands** <br/>
+    ![Welp option to view all the available commands in the tool](images/img1.jpg)
  2. **We initialize the Database** <br/>
     ![We initialize the Database](images/img2.jpg) <br/>
  3. **Start Enqueue the Jobs** <br/>
-    ![We initialize the Database](images/enqueue_job.jpg) <br/>
-     
+    ![We Enqueue Jobs](images/enqueue_job.jpg) <br/>
+ 4. **Job Table Contents after enqueuing of jobs** <br/>
+    ![Jobs table contents](images/jobtable_contents.jpg) <br/>
+ 5. **Starting the Workers to execute the Tasks(Asynchronous Execution)** <br/>
+    ![Starting the workers](images/workers_start.jpg) <br/>
+>   **Jobs List after Execution by the worker processes** <br/>
+    ![jobs after execution](images/jobs_afterexecution.jpg) <br/>
+
 
 
 
