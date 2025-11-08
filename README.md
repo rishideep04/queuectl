@@ -186,7 +186,7 @@ flowchart TD
 # Testing Instructions
 
 ![given test scenarios](images/test_scene.jpg) <br/>
-**all the above test scenarios were tested and can confidently say that the product is ready as per the given Usecase**
+**all the above test scenarios were tested and can confidently say that the product is ready as per the given Usecase.Feel free to try it out!!!**
 
 This section explains how the QueueCTL system has been tested and how users can further verify its functionality. <br/>
 
@@ -207,6 +207,7 @@ pytest -v --disable-warnings
 ```
 ## Unit Testing Report 
 ![unit test report](images/unit_test_report.jpg) <br/>
+
 
 
 
