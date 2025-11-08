@@ -64,12 +64,14 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 **the setup is ready to use**  <br/>
 
 # Usage Examples — CLI Commands with Example Outputs
- 1. **We initialize the Database** <br/>
+ 1. **help for finding out the available commands** <br/>
     ![help option to view all the available commands in the tool](images/img1.jpg)
+ 2. **We initialize the Database** <br/>
     ![We initialize the Database](images/img2.jpg) <br/>
- 2. **Start Enqueue the Jobs** <br/>
+ 3. **Start Enqueue the Jobs** <br/>
     ![We initialize the Database](images/img4.jpg) <br/>
      
+
 
 
 
