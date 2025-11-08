@@ -37,7 +37,7 @@ This tool can :
 **Before we continue,i have to clarify the reason for using PostgreSQL, which i felt a better choice for the UseCase.** <br/>
 
 # **Why did I use PostgreSQL ?** <br/>
->Yes, I chose PostgreSQL over the other existing db.Initially I worked with SQLITE3 but i ended up with the problem of multiple writes which lead to a deadlock and on solving it (used the file locking mechanism which SQLITE is famous for!!) i ended up with concurrency  bottlenecks. <br/>
+>Yes, I chose PostgreSQL over the other existing db.Initially I worked with SQLITE3 but i ended up with the problem of multiple writes which lead to a deadlock situation and on solving it (used the file locking mechanism which SQLITE is famous for!!) i ended up with concurrency  bottlenecks. <br/>
 
 # **The Problem I Faced** <br/>
 >When i have multiple jobs and multiple worker processes,my worker process on completing a task,it is trying for the next job ,but if the job is already assigned to a worker node, this is leading to a deadlock(1 job 2 worker nodes trying to access).so I solved the deadlock issue by preventing the shared state of worker process and locked the database so that only one worker process at a time can execute.This led to a Sequential Execution of the jobs by the worker nodes which is completely abiding the concept of asynchronous execution. <br/>
@@ -70,6 +70,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
  2. **Start Enqueue the Jobs** <br/>
     ![We initialize the Database](images/img4.jpg) <br/>
      
+
 
 
 
