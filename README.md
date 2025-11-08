@@ -60,7 +60,7 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 >    "port": 5432 <br/>
 >    } <br/>
 > 3. Initialize the Database <br/>
->    python cli.py init #initializing the database for storing the jobs,workers and configuration features <br/>
+>    python cli.py init #initializing the database for storing the jobs,workers and configuration features **{this step can be skipped if you want to use the existing database}** <br/>
 
 **Now we are good to go !!!!** <br/>
 **the setup is ready to use**  <br/>
@@ -95,6 +95,21 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
     ![stopping the worker nodes](images/worker_stop.jpg) <br/>
  10. **Finding the status of the worker nodes,jobs** <br/>
     ![status](images/status.jpg) <br/>
+
+# Architecture Overview
+
+| Component | Description |
+|------------|--------------|
+| **`cli.py`** | Command Line Interface for job management — enqueue, list, retry, config, status, and worker control. |
+| **`worker.py`** | Handles job execution, state transitions, retries, and failure management. |
+| **`db.py`** | Handles all database interactions (PostgreSQL) — schema creation, safe inserts, and connections. |
+| **`job_store.py`** | Enqueue logic and job retrieval with configuration-based behavior. |
+| **`scheduler.py`** | Implements exponential backoff and retry scheduling. |
+| **`config_mgr.py`** | Manages global runtime configuration values. |
+| **`status.py`** | Aggregates live system statistics and metrics for CLI reporting. |
+| **`dashboard.py`** | Lightweight Flask web dashboard for real-time monitoring. |
+| **`templates/dashboard.html`** | Bootstrap-based UI template for live job/worker overview. |
+
 
 
 
