@@ -106,6 +106,7 @@ DB_CONFIG = {
 
  # ADDON
 > **designed a simple dashboard that updates in real-time**<br/>
+<br/>
 ![dashboard](images/dashboard.jpg) <br/>
 
 # Architecture Overview
@@ -211,6 +212,7 @@ pytest -v --disable-warnings
 ```
 ## Unit Testing Report 
 ![unit test report](images/unit_test_report.jpg) <br/>
+
 
 
 
