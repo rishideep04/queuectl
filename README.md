@@ -115,18 +115,15 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 ### **High-Level Data Flow**
 ```mermaid
 flowchart TD
-
-    A[CLI (enqueue)] --> B[(PostgreSQL\njobs table)]
-    B --> C[Worker (poll loop)]
-    C --> D[Execute Command]
-    D --> E{Job Result?}
-    
-    E -->|Success| F[Update State → completed]
-    E -->|Failure| G[Update State → failed\nRetry with backoff]
-    G --> H{Max Retries Reached?}
-    H -->|No| I[Schedule Next Attempt]
-    H -->|Yes| J[Mark as Dead (DLQ)]
-
+    A[CLI: enqueue job] --> B[(PostgreSQL: jobs table)]
+    B --> C[Worker process (poll loop)]
+    C --> D[Execute command]
+    D --> E{Job result?}
+    E -->|Success| F[Mark as completed]
+    E -->|Failure| G[Mark as failed and schedule retry]
+    G --> H{Max retries reached?}
+    H -->|No| I[Calculate backoff and retry later]
+    H -->|Yes| J[Move to Dead Letter Queue (DLQ)]
     F --> K[CLI list / Web Dashboard]
     I --> C
     J --> K
@@ -139,6 +136,7 @@ flowchart TD
     style G fill:#ff7043,stroke:#bf360c,stroke-width:2px,color:white
     style J fill:#ffa000,stroke:#e65100,stroke-width:2px,color:white
     style K fill:#90a4ae,stroke:#455a64,stroke-width:2px,color:white
+
 
 
 
