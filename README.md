@@ -178,6 +178,7 @@ flowchart TD
 # Testing Instructions
 
 ![given test scenarios](images/test_scene.jpg) <br/>
+**all the above test scenarios were tested and can confidently say that the product is ready as per the given Usecase**
 
 This section explains how the QueueCTL system has been tested and how users can further verify its functionality. <br/>
 
@@ -195,6 +196,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 
 ```bash
 pytest -v --disable-warnings
+
 
 
 
