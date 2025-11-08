@@ -1,4 +1,3 @@
-# tests/test_worker_logic.py
 import worker
 from unittest.mock import patch
 from datetime import datetime, timezone
