@@ -1,7 +1,6 @@
-# tests/test_dlq_and_retry.py
 import psycopg2
 from db import make_connection
-from cli import dlq_retry
+from cli import dlq_retry 
 
 def test_dlq_retry_moves_to_pending(monkeypatch):
     conn = make_connection()
