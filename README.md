@@ -29,12 +29,11 @@ cd queuectl
 ```
 
 # **Step 2 - Create and Activate a Virtual Environment {Preventing version conflicts or any python dependencies!!!}** <br/>
->    **Create a virtual environment** <br/>
+**Create a virtual environment** <br/>
      ```bash
-     python -m venv venv <br/>
+     python -m venv venv 
      ```
-> 
->    **Activating the virtual environment**<br/>
+**Activating the virtual environment**<br/>
      ```bash
      venv\Scripts\activate  #works for windows
      ```
@@ -204,6 +203,7 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+
 
 
 
