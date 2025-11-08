@@ -100,15 +100,18 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 
 | Component | Description |
 |------------|--------------|
-| **`cli.py`** | Command Line Interface for job management — enqueue, list, retry, config, status, and worker control. |
+| **`cli.py`** | Command Line Interface for job management like enqueue, list, retry, config, status, and worker control. |
 | **`worker.py`** | Handles job execution, state transitions, retries, and failure management. |
-| **`db.py`** | Handles all database interactions (PostgreSQL) — schema creation, safe inserts, and connections. |
+| **`db.py`** | Handles all database interactions (PostgreSQL) like schema creation, safe inserts(optional feature), and connections. |
 | **`job_store.py`** | Enqueue logic and job retrieval with configuration-based behavior. |
 | **`scheduler.py`** | Implements exponential backoff and retry scheduling. |
 | **`config_mgr.py`** | Manages global runtime configuration values. |
 | **`status.py`** | Aggregates live system statistics and metrics for CLI reporting. |
 | **`dashboard.py`** | Lightweight Flask web dashboard for real-time monitoring. |
 | **`templates/dashboard.html`** | Bootstrap-based UI template for live job/worker overview. |
+
+> **safe insert helps when there is an error occured while inserting in database or transaction,it repeats it**
+
 
 
 
