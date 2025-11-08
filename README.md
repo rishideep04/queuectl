@@ -64,8 +64,9 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 **the setup is ready to use**  <br/>
 
 # Usage Examples — CLI Commands with Example Outputs
- 1. We initialize the Database
+ 1. [We initialize the Database](images/img1.jpg)
      
+
 
 
 
