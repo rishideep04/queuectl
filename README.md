@@ -80,9 +80,19 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
     ![jobs after execution](images/jobs_afterexecution.jpg) <br/>
  6. **Now that there is a Dead process in the Job table, it is stored in the Dead Letter Queue(DLQ)** <br/>
     ![dead jobs storing in DLQ](images/dlq_list.jpg) <br/>
- 7. **retrying the dead process from the DLQ** <br/>
+ 7. **retrying the dead process from the DLQ[my worker nodes will wait for a new job upon executing a job,so when i execute the dlq-retry,worker node will take job and execute it.here in the below image i have stopped the worker nodes to show that,once this command is executed,the job is made ready to get executed by the worker node]** <br/>
+    ![dead jobs retrying in DLQ](images/dlq_retry.jpg) <br/>
+ 8. **changing the configuration of execution using [max_retries,backoff_base,max_backoff_seconds,job_time_out_seconds]** <br/>
+ >  listing the configuration settings <br/>
+    ![dead jobs storing in DLQ](images/config_list.jpg) <br/>
+ >  changing the configuration settings, i'm going to change for max_retries <br/>
+    ![dead jobs storing in DLQ](images/config_set.jpg) <br/>
+ >  listing the configuration settings <br/>
+    ![dead jobs storing in DLQ](images/config_get.jpg) <br/>
+ 9. **Finding the status of the worker nodes,jobs** <br/>
     ![dead jobs storing in DLQ](images/dlq_retry.jpg) <br/>
  6. **Stopping the Workers** <br/>
+
 
 
 
