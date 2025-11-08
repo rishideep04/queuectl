@@ -84,14 +84,17 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
     ![dead jobs retrying in DLQ](images/dlq_retry.jpg) <br/>
  8. **changing the configuration of execution using [max_retries,backoff_base,max_backoff_seconds,job_time_out_seconds]** <br/>
  >  listing the configuration settings <br/>
-    ![dead jobs storing in DLQ](images/config_list.jpg) <br/>
+    ![configuration table](images/config_list.jpg) <br/>
  >  changing the configuration settings, i'm going to change for max_retries <br/>
-    ![dead jobs storing in DLQ](images/config_set.jpg) <br/>
+    ![changing the value in config table](images/config_set.jpg) <br/>
  >  listing the configuration settings <br/>
-    ![dead jobs storing in DLQ](images/config_get.jpg) <br/>
+    ![getting the value from the setting in the config table](images/config_get.jpg) <br/>
+ >  job table after the change in config settings and a new job **job5** is enqueued will follow the new updated configuration settings,also the dead job after dlq retry will follow the new updated configuration settings <br/>
+    ![job table after change in config settigns and new job is enqueued](images/update_job_after_changeconfig.jpg) <br/>
  9. **Finding the status of the worker nodes,jobs** <br/>
-    ![dead jobs storing in DLQ](images/dlq_retry.jpg) <br/>
+    ![dead jobs storing in DLQ](images/status.jpg) <br/>
  6. **Stopping the Workers** <br/>
+
 
 
 
