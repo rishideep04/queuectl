@@ -137,6 +137,10 @@ flowchart TD
     style J fill:#ffa000,stroke:#e65100,stroke-width:2px,color:white
     style K fill:#90a4ae,stroke:#455a64,stroke-width:2px,color:white
 
+# Assumptions & Trade-offs
+
+
+
 
 
 
