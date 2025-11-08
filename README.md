@@ -104,6 +104,10 @@ DB_CONFIG = {
  10. **Finding the status of the worker nodes,jobs** <br/>
     ![status](images/status.jpg) <br/>
 
+ # ADDON
+ **designed a simple dashboard that updates in real-time**
+ ![dashboard](images/dashboard.jpg) <br/>
+
 # Architecture Overview
 
 | Component | Description |
@@ -207,6 +211,7 @@ pytest -v --disable-warnings
 ```
 ## Unit Testing Report 
 ![unit test report](images/unit_test_report.jpg) <br/>
+
 
 
 
