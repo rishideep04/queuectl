@@ -1,4 +1,3 @@
-#conftest.py
 import pytest
 import psycopg2
 import sys
@@ -11,7 +10,6 @@ if ROOT_DIR not in sys.path:
 from db import make_connection, migrate
 @pytest.fixture(scope="session", autouse=True)
 def setup_database():
-    # initialize database schema
     migrate()
     yield
     dbconn = make_connection()
