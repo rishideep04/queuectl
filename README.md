@@ -136,8 +136,68 @@ flowchart TD
     style G fill:#ff7043,stroke:#bf360c,stroke-width:2px,color:white
     style J fill:#ffa000,stroke:#e65100,stroke-width:2px,color:white
     style K fill:#90a4ae,stroke:#455a64,stroke-width:2px,color:white
+```
 
 # Assumptions & Trade-offs
+
+## Assumptions
+
+| # | Assumption | Rationale |
+|---|-------------|-----------|
+| 1 | **All jobs are shell commands** (e.g., `echo`, `dir`, `ping`) | Simplifies job execution and avoids dependency on user-defined scripts or Python functions. |
+| 2 | **Each worker runs independently** | Ensures fault isolation ,one worker crash does not affect others. |
+| 3 | **PostgreSQL is always available** | Persistence layer reliability is assumed; no replication or failover mechanism included. |
+| 4 | **Jobs are idempotent** | Retries won’t cause inconsistent states or side effects. |
+| 5 | **System runs on a single host** (for now) | Multi-node scaling is a planned enhancement.simplifies state sharing via a single DB. |
+| 6 | **Config values are static during runtime** | Config values (e.g., retry count, backoff) are loaded before execution,no live reload for simplicity. |
+| 7 | **Job commands are trusted** | No sandboxing or privilege separation is implemented (to simplify execution via subprocess). |
+
+## Trade-offs
+
+| Decision | Trade-off | Justification |
+|-----------|------------|---------------|
+| **Using PostgreSQL instead of Redis** | Slightly slower operations | SQL transactions, durability, and ACID compliance were prioritized over in-memory speed.mainly the skipped locking mechanism |
+| **Using polling workers** | Not event-driven | Simplifies implementation; avoids message brokers like RabbitMQ or Kafka. |
+| **Exponential backoff with jitter** | Adds randomness to retry times | Prevents retry storms when multiple jobs fail at once. |
+| **`FOR UPDATE SKIP LOCKED`** | PostgreSQL-specific syntax | Provides simple and effective concurrency control without requiring distributed locks. |
+| **Using subprocess execution** | Limited portability across OS environments | Simple, flexible way to run shell commands without embedding interpreters.better db compared with sqlite which cannot be a suitable db for multiple writes |
+| **No live job cancellation** | Cannot stop mid-execution | Avoids complex inter-process signaling and partial state rollback. |
+| **Single DLQ table** | Lacks categorization or retention policy | Keeps schema simple and debugging easier for initial version. |
+
+## Simplifications
+
+| Simplification | Impact |
+|----------------|---------|
+| **No authentication or user roles** | Intended for trusted local environments only. |
+| **No web API layer yet** | Interactions happen only via CLI and Flask dashboard. |
+| **No real-time job updates on dashboard** | Dashboard auto-refreshes periodically instead of using WebSockets. |
+| **No metrics persistence** | System metrics like success/failure rate are computed on-demand. |
+| **No retry prioritization** | All failed jobs are treated equally during requeue. |
+| **Single-node scaling** | Multi-host worker coordination is left for future expansion. |
+
+# Testing Instructions
+
+![given test scenarios](images/test_scene.jpg) <br/>
+
+This section explains how the QueueCTL system has been tested and how users can further verify its functionality. <br/>
+
+## Unit Testing
+
+- The project includes **comprehensive unit tests** covering core modules such as:
+  - `config_mgr.py`
+  - `job_store.py`
+  - `scheduler.py`
+  - `worker.py`
+  - `status.py`
+- Tests are written using **pytest** and are located in the `tests/` directory.
+
+### Run Unit Tests
+
+```bash
+pytest -v --disable-warnings
+
+
+
 
 
 
