@@ -1,4 +1,3 @@
-# tests/test_job_store.py
 from job_store import enqueue_job, list_jobs
 from db import make_connection
 import json
