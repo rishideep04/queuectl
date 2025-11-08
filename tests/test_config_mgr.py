@@ -1,4 +1,3 @@
-# tests/test_config_mgr.py
 from config_mgr import ensure_defaults, get_config, set_config, list_config
 
 def test_ensure_defaults():
