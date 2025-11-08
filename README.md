@@ -113,29 +113,33 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
 > **safe insert helps when there is an error occured while inserting in database or transaction,it repeats it**
 
 ### **High-Level Data Flow**
-┌─────────────────────────────┐
-│ CLI (enqueue) │
-└────────────┬────────────────┘
-│
-▼
-┌──────────────┐
-│ PostgreSQL │
-│ (jobs table)│
-└──────┬───────┘
-│
-▼
-┌────────────────────┐
-│ Worker (poll loop) │
-└───────┬────────────┘
-│
-▼
-Execute → Update State → Retry/Backoff
-│
-▼
-Completed / Dead (DLQ)
-│
-▼
-CLI list / Web Dashboard
+```mermaid
+flowchart TD
+
+    A[CLI (enqueue)] --> B[(PostgreSQL\njobs table)]
+    B --> C[Worker (poll loop)]
+    C --> D[Execute Command]
+    D --> E{Job Result?}
+    
+    E -->|Success| F[Update State → completed]
+    E -->|Failure| G[Update State → failed\nRetry with backoff]
+    G --> H{Max Retries Reached?}
+    H -->|No| I[Schedule Next Attempt]
+    H -->|Yes| J[Mark as Dead (DLQ)]
+
+    F --> K[CLI list / Web Dashboard]
+    I --> C
+    J --> K
+
+    style A fill:#00b3ff,stroke:#0077aa,stroke-width:2px,color:white
+    style B fill:#ffcc00,stroke:#aa8800,stroke-width:2px,color:black
+    style C fill:#4CAF50,stroke:#2e7d32,stroke-width:2px,color:white
+    style D fill:#6a1b9a,stroke:#4a148c,stroke-width:2px,color:white
+    style F fill:#00c853,stroke:#00701a,stroke-width:2px,color:white
+    style G fill:#ff7043,stroke:#bf360c,stroke-width:2px,color:white
+    style J fill:#ffa000,stroke:#e65100,stroke-width:2px,color:white
+    style K fill:#90a4ae,stroke:#455a64,stroke-width:2px,color:white
+
 
 
 
