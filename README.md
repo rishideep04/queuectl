@@ -205,6 +205,9 @@ This section explains how the QueueCTL system has been tested and how users can 
 ```bash
 pytest -v --disable-warnings
 ```
+## Unit Testing Report 
+![unit test report](images/unit_test_report.jpg) <br/>
+
 
 
 
