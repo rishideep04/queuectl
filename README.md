@@ -91,10 +91,11 @@ with PostgreSQL i can use the SKIP LOCKED Mechanism where, if a worker node is e
     ![getting the value from the setting in the config table](images/config_get.jpg) <br/>
  >  job table after the change in config settings and a new job **job5** is enqueued will follow the new updated configuration settings,also the dead job after dlq retry will follow the new updated configuration settings <br/>
     ![job table after change in config settigns and new job is enqueued](images/update_job_after_changeconfig.jpg) <br/>
- 9. **Finding the status of the worker nodes,jobs** <br/>
-    ![status](images/status.jpg) <br/>
- 10. **Stopping the Workers** <br/>
+ 9. **Stopping the Workers,status of the worker node is shown in the below image** <br/>
     ![stopping the worker nodes](images/worker_stop.jpg) <br/>
+ 10. **Finding the status of the worker nodes,jobs** <br/>
+    ![status](images/status.jpg) <br/>
+
 
 
 
